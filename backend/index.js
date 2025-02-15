@@ -9,13 +9,13 @@ const jwt = require("jsonwebtoken");
 const upload = require("./multer");
 const fs = require("fs");
 const path = require("path");
-
+ACCESS_TOKEN_SECRET="1f775dedc439323121b94836b9cb691f97793bb86a5c8d73030e158e57e68743886caef772ed3254945fd92d11fb218fa63df3cc753d06210c092daa1acb8286"
 const { authenticateToken } = require("./utilities");
 
 const User = require("./models/user.model");
 const TravelStory = require("./models/travelStory.model");
 
-mongoose.connect(config.connectionString);
+mongoose.connect("mongodb+srv://karthikeyareddy2nd:nBJld47MwupXvCMM@cluster0.i4k8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 const app = express();
 app.use(express.json());
@@ -50,7 +50,7 @@ app.post("/create-account", async (req, res) => {
 
   const accessToken = jwt.sign(
     { userId: user._id },
-    process.env.ACCESS_TOKEN_SECRET,
+    ACCESS_TOKEN_SECRET,
     {
       expiresIn: "72h",
     }
@@ -84,7 +84,7 @@ app.post("/login", async (req, res) => {
 
   const accessToken = jwt.sign(
     { userId: user._id },
-    process.env.ACCESS_TOKEN_SECRET,
+    ACCESS_TOKEN_SECRET,
     {
       expiresIn: "72h",
     }
