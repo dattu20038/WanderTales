@@ -130,12 +130,10 @@ Open your browser and navigate to `http://localhost:5173` (or the port specified
 - React Toastify for notifications
 - React Day Picker for date selection
 
-## Contributing
-Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+
 
 ## Contributors
 - **Datta Srivathsava Gollapinni** - [GitHub](https://github.com/dattu20038)
 - **N.S.L Karthikeya Reddy** - [GitHub](https://github.com/NSL-Karthikeya-Reddy)
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+
