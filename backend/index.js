@@ -15,7 +15,12 @@ const { authenticateToken } = require("./utilities");
 const User = require("./models/user.model");
 const TravelStory = require("./models/travelStory.model");
 
-mongoose.connect("mongodb+srv://karthikeyareddy2nd:nBJld47MwupXvCMM@cluster0.i4k8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to MongoDB successfully"))
+.catch((err) => console.error("MongoDB connection error:", err));
 
 const app = express();
 app.use(express.json());
@@ -362,6 +367,8 @@ app.get("/travel-stories/filter", authenticateToken, async (req, res) => {
     res.status(500).json({ error: true, message: error.message });
   }
 });
-
-app.listen(8000);
+const PORT = 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 module.exports = app;
