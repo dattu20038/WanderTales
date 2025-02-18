@@ -21,7 +21,6 @@ WanderTales is a personal travel journal application that allows users to docume
 ## Features
 - **User Authentication**: Secure sign-up and login with JWT-based authentication.
 - **Travel Story Management**: Add, edit, delete, and view travel stories.
-- **Image Uploads**: Upload images to enrich your travel stories.
 - **Search and Filter**: Search stories by title, story, or location, and filter by date range.
 - **Favorites**: Mark your favorite travel stories for quick access.
 - **Responsive UI**: A clean and modern user interface built with React and Tailwind CSS.
@@ -103,10 +102,6 @@ Open your browser and navigate to `http://localhost:5173` (or the port specified
 - `PUT /edit-story/:id` : Update an existing travel story.
 - `DELETE /delete-story/:id` : Delete a travel story.
 - `PUT /update-is-favourite/:id` : Toggle the "favorite" status of a story.
-
-### Image Uploads
-- `POST /image-upload` : Upload an image.
-- `DELETE /delete-image` : Delete an uploaded image.
 
 ### Search and Filter
 - `GET /search` : Search travel stories by query.
